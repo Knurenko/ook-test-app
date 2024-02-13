@@ -1,6 +1,5 @@
 package com.example.ooktestapp.presentation.ui.compose.screens.main
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -17,9 +16,10 @@ fun MainScreenController() {
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        viewModel.errors.collect {
-            Toast.makeText(context, "Oups! there is an error! $it", Toast.LENGTH_SHORT).show()
-            Log.e("check", "error: $it")
+        viewModel.errors.collect { errorMessage ->
+            errorMessage?.let {
+                Toast.makeText(context, "Oups! there is an error! $it", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
