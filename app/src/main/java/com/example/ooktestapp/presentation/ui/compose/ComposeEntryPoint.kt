@@ -1,6 +1,7 @@
 package com.example.ooktestapp.presentation.ui.compose
 
 import androidx.compose.runtime.Composable
+import com.example.ooktestapp.presentation.ui.compose.screens.main.MainScreenController
 import com.example.ooktestapp.presentation.ui.theme.AppTheme
 
 /**
@@ -9,5 +10,5 @@ import com.example.ooktestapp.presentation.ui.theme.AppTheme
 
 @Composable
 fun ComposeEntryPoint() = AppTheme {
-    // todo composable shit
+    MainScreenController()
 }

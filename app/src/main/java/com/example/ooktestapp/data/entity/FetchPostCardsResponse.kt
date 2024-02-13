@@ -8,5 +8,10 @@ import com.google.gson.annotations.SerializedName
  */
 data class FetchPostCardsResponse(
     @SerializedName("data")
-    val data: List<PostCardResponse>
+    val data: PostCardsResponse
+)
+
+data class PostCardsResponse(
+    @SerializedName("postcards")
+    val list: List<PostCardResponse>
 )

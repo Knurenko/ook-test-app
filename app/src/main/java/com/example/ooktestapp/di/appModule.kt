@@ -5,6 +5,8 @@ import com.example.ooktestapp.data.network.di.RetrofitFactory
 import com.example.ooktestapp.data.network.service.PostCardService
 import com.example.ooktestapp.data.repo.PostCardRepoImpl
 import com.example.ooktestapp.domain.repo.PostCardRepository
+import com.example.ooktestapp.presentation.ui.compose.screens.main.MainScreenViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**
@@ -27,4 +29,7 @@ val appModule = module {
             mapper = get()
         )
     }
+
+    // view model
+    viewModel { MainScreenViewModel(repository = get()) }
 }

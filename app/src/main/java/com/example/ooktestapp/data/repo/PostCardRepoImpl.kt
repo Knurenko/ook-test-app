@@ -15,7 +15,7 @@ class PostCardRepoImpl(
 
     override suspend fun fetchPostCards(page: Int): List<PostCardModel> {
         val response = service.fetchPostCards(page)
-        val pics = response.data
+        val pics = response.data.list
         return pics.map { mapper.map(it) }
     }
 }
